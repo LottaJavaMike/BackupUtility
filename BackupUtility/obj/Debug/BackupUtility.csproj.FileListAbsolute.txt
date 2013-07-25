@@ -1,0 +1,6 @@
+C:\Users\mike\SkyDrive\development\c#\BackupUtility\BackupUtility\bin\Debug\BackupUtility.exe.config
+C:\Users\mike\SkyDrive\development\c#\BackupUtility\BackupUtility\obj\Debug\BackupUtility.csprojResolveAssemblyReference.cache
+C:\Users\mike\SkyDrive\development\c#\BackupUtility\BackupUtility\bin\Debug\BackupUtility.exe
+C:\Users\mike\SkyDrive\development\c#\BackupUtility\BackupUtility\bin\Debug\BackupUtility.pdb
+C:\Users\mike\SkyDrive\development\c#\BackupUtility\BackupUtility\obj\Debug\BackupUtility.exe
+C:\Users\mike\SkyDrive\development\c#\BackupUtility\BackupUtility\obj\Debug\BackupUtility.pdb

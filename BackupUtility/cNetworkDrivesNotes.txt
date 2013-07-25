@@ -1,0 +1,90 @@
+Add the class file "cNetworkDrives.cs" to your project / solution. Below are examples of mapping and unmapping a network drive...
+
+aejw.cNetworkDrive netDrive = new aejw.cNetworkDrive();
+
+// Map a network drive
+try{
+	netDrive.LocalDrive = "m:";
+	netDrive.ShareName = "\\ComputerName\Share"
+	netDrive.MapDrive();
+}catch(Exception ex){
+	MessageBox.Show(this,"Error: " + ex.Message);
+}
+
+// Unmapping a network drive
+try{
+	netDrive.LocalDrive = "m:";
+	netDrive.UnMapDrive();
+}catch(Exception ex){
+	MessageBox.Show(this,"Error: " + ex.Message);
+}
+
+netDrive = null;
+
+Below is general breakdown of the classes functions and methods...
+
+aejw.cNetworkDrive netDrive = new aejw.cNetworkDrive();
+
+// Map drive with current user credentials
+netDrive.LocalDrive = "m:";
+netDrive.ShareName = "\\ComputerName\Share1";
+netDrive.MapDrive();
+
+// Map drive with and prompt user for credentials
+netDrive.LocalDrive = "m:";
+netDrive.ShareName = "\\ComputerName\Share1";
+netDrive.MapDrive("Bob_Username","Bob_Password");
+
+// Map drive using a persistent connection
+netDrive.LocalDrive = "m:";
+netDrive.Persistent = true;
+netDrive.SaveCredentials = true;
+netDrive.ShareName = "\\ComputerName\Share1";
+netDrive.MapDrive("Bob_Username","Bob_Password");
+
+// Unmap a network connection
+netDrive.LocalDrive = "m:";
+netDrive.UnMapDrive();
+
+// Display message box of connected drives
+string drives="[Connected Drives]\n";
+foreach(string drive in oNetDrive.MappedDrives){
+	drives+=" "+sDrive+"\n";
+}
+MessageBox.Show(drives);
+
+// Restore drive connection
+netDrive.RestoreDrive("x:");
+
+netDrive=null;
+
+Below is a general index of the miscellaneous commands in cNetworkDrive, below is some example code for the functions related uses...
+
+aejw.cNetworkDrive netDrive = new aejw.cNetworkDrive();
+
+// Display windows connection dialog
+netDrive.ShowConnectDialog();
+
+// Display windows disconnection dialog, passing the parent form
+netDrive.ShowDisconnectDialog(this.Handle);
+
+// Restore all persistent connections
+netDrive.RestoreDrives();
+
+// Checking for a connected drive
+bool isDrive = oNetDrive.IsNetworkDrive("x:");
+
+// Collect the share of a connected drive
+string share = oNetDrive.GetMappedShareName("x:");
+
+// Mapping a network connection (Use Connection)
+netDrive.LocalDrive = null;
+netDrive.ShareName = "\\ComputerName\Share1"
+netDrive.MapDrive();
+
+// Unmapping a network connection
+netDrive.LocalDrive = null;
+netDrive.ShareName = "\\ComputerName\Share1"
+netDrive.UnMapDrive();
+
+netDrive = null;
